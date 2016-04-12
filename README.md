@@ -1,5 +1,5 @@
 # nopCommercePlugins
-Plugins and Templates for nopCommerce. http://nopcommerce.com
+Plugins and Templates for nopCommerce. http://www.nopcommerce.com
 
 شما میتوانید پلاگین های پرداخت آنلاین برای بانک های ایرانی را در این پروژه بیابید و استفاده نمایید.
 

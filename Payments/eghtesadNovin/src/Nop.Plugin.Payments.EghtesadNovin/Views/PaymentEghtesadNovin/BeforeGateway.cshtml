@@ -1,0 +1,15 @@
+﻿@using Nop.Plugin.Payments.EghtesadNovin.Models
+@model BeforeGatewayModel
+
+<form id="Gateway__PostForm" name="Gateway__PostForm" action="https://pna.shaparak.ir/CardServices/controller" method="POST">
+    <input type="hidden" name="MID" value="@Model.Mid">
+    <input type="hidden" name="ResNum" value="@Model.ResNum">
+    <input type="hidden" name="Amount" value="@Model.Amount">
+    <input type="hidden" name="RedirectURL" value="@Model.RedirectUrl">
+    <input type="hidden" name="language" value="fa">
+</form>
+
+<script language="javascript">
+    var myForm = document.Gateway__PostForm;
+    myForm.submit();
+</script>

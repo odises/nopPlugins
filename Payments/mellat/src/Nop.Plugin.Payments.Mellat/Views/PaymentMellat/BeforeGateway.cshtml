@@ -1,0 +1,11 @@
+﻿@using Nop.Plugin.Payments.Mellat.Models
+@model BeforeGatewayModel
+
+<form id="Gateway__PostForm" name="Gateway__PostForm" action="https://pgw.bpm.bankmellat.ir/pgwchannel/startpay.mellat" method="POST">
+    <input type="hidden" name="RefId" value="@Model.RefId">
+</form>
+
+<script language="javascript">
+    var myForm = document.Gateway__PostForm;
+    myForm.submit();
+</script>

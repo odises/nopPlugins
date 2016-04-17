@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "";
+}
+@model ConfigurationModel
+@using Nop.Plugin.Payments.Mellat.Models;
+@using Nop.Web.Framework;
+@Html.Action("StoreScopeConfiguration", "Setting", new { area = "Admin" })
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <table class="adminContent">
+        <tr>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <hr />
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.OverrideStoreCheckboxFor(model => model.TerminalId_OverrideForStore, model => model.TerminalId, Model.ActiveStoreScopeConfiguration)
+                @Html.NopLabelFor(model => model.TerminalId):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.TerminalId)
+                @Html.ValidationMessageFor(model => model.TerminalId)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.OverrideStoreCheckboxFor(model => model.Username_OverrideForStore, model => model.Username, Model.ActiveStoreScopeConfiguration)
+                @Html.NopLabelFor(model => model.Username):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.Username)
+                @Html.ValidationMessageFor(model => model.Username)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.OverrideStoreCheckboxFor(model => model.Password_OverrideForStore, model => model.Password, Model.ActiveStoreScopeConfiguration)
+                @Html.NopLabelFor(model => model.Password):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" name="save" class="k-button" value="@T("Admin.Common.Save")" />
+            </td>
+        </tr>
+    </table>
+
+}

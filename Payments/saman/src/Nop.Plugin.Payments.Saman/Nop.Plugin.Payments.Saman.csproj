@@ -72,7 +72,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\PaymentSamanController.cs" />
-    <Compile Include="Helper\RedirectAndPostHelper.cs" />
     <Compile Include="Models\BeforeGatewayModel.cs" />
     <Compile Include="Models\ConfigurationModel.cs" />
     <Compile Include="Models\SamanCallbackResult.cs" />
@@ -128,17 +127,17 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="E:\Reza Ahmadi\nopCommerce\src\Libraries\Nop.Core\Nop.Core.csproj">
+    <ProjectReference Include="..\..\..\..\..\..\nopCommerce\nopCommerce\src\Libraries\Nop.Core\Nop.Core.csproj">
       <Project>{6bda8332-939f-45b7-a25e-7a797260ae59}</Project>
       <Name>Nop.Core</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="E:\Reza Ahmadi\nopCommerce\src\Libraries\Nop.Services\Nop.Services.csproj">
+    <ProjectReference Include="..\..\..\..\..\..\nopCommerce\nopCommerce\src\Libraries\Nop.Services\Nop.Services.csproj">
       <Project>{210541ad-f659-47da-8763-16f36c5cd2f4}</Project>
       <Name>Nop.Services</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="E:\Reza Ahmadi\nopCommerce\src\Presentation\Nop.Web.Framework\Nop.Web.Framework.csproj">
+    <ProjectReference Include="..\..\..\..\..\..\nopCommerce\nopCommerce\src\Presentation\Nop.Web.Framework\Nop.Web.Framework.csproj">
       <Project>{75fd4163-333c-4dd5-854d-2ef294e45d94}</Project>
       <Name>Nop.Web.Framework</Name>
       <Private>False</Private>
@@ -185,6 +184,7 @@
       <CachedSettingsPropName>Nop_Plugin_Payments_Saman_Sep_ReferencePayment_PaymentIFBinding</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

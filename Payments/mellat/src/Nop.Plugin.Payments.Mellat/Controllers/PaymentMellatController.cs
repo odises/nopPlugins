@@ -1,11 +1,7 @@
 ﻿using Nop.Web.Framework.Controllers;
 using Nop.Services.Payments;
 using System.Collections.Generic;
-using System.Web.Mvc;
 using Nop.Plugin.Payments.Mellat.Models;
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
-using System.Net.Security;
 using Nop.Services.Orders;
 using Nop.Services.Stores;
 using Nop.Core;
@@ -13,6 +9,7 @@ using Nop.Services.Configuration;
 using Nop.Services.Localization;
 using Nop.Services.Logging;
 using System;
+using System.Web.Mvc;
 
 namespace Nop.Plugin.Payments.Mellat.Controllers
 {

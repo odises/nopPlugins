@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://paymentService.merchant.webservice.epayment.modern.tosan.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="PaymentWebServiceService" targetNamespace="http://paymentService.merchant.webservice.epayment.modern.tosan.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="https://fanava.shaparak.ir:443/merchantwebservice/jax/merchantAuth?xsd=1" namespace="http://paymentService.merchant.webservice.epayment.modern.tosan.com/" />
+    </xsd:schema>
+  </types>
+  <message name="login">
+    <part name="parameters" element="tns:login" />
+  </message>
+  <message name="loginResponse">
+    <part name="parameters" element="tns:loginResponse" />
+  </message>
+  <message name="WsClientAddressException">
+    <part name="fault" element="tns:WsClientAddressException" />
+  </message>
+  <message name="WsInvalidCredentialException">
+    <part name="fault" element="tns:WsInvalidCredentialException" />
+  </message>
+  <message name="WsBlockUserException">
+    <part name="fault" element="tns:WsBlockUserException" />
+  </message>
+  <message name="logout">
+    <part name="parameters" element="tns:logout" />
+  </message>
+  <message name="logoutResponse">
+    <part name="parameters" element="tns:logoutResponse" />
+  </message>
+  <message name="WsInvalidSessionException">
+    <part name="fault" element="tns:WsInvalidSessionException" />
+  </message>
+  <message name="tokenPurchaseVerifyTransaction">
+    <part name="parameters" element="tns:tokenPurchaseVerifyTransaction" />
+  </message>
+  <message name="tokenPurchaseVerifyTransactionResponse">
+    <part name="parameters" element="tns:tokenPurchaseVerifyTransactionResponse" />
+  </message>
+  <message name="WsInvalidTokenException">
+    <part name="fault" element="tns:WsInvalidTokenException" />
+  </message>
+  <message name="WsInvalidAmountException">
+    <part name="fault" element="tns:WsInvalidAmountException" />
+  </message>
+  <message name="WsPaymentVerificationException">
+    <part name="fault" element="tns:WsPaymentVerificationException" />
+  </message>
+  <message name="WsTransactionNotFoundException">
+    <part name="fault" element="tns:WsTransactionNotFoundException" />
+  </message>
+  <message name="reportTransaction">
+    <part name="parameters" element="tns:reportTransaction" />
+  </message>
+  <message name="reportTransactionResponse">
+    <part name="parameters" element="tns:reportTransactionResponse" />
+  </message>
+  <message name="detailReportTransaction">
+    <part name="parameters" element="tns:detailReportTransaction" />
+  </message>
+  <message name="detailReportTransactionResponse">
+    <part name="parameters" element="tns:detailReportTransactionResponse" />
+  </message>
+  <message name="merchantSettlementRequest">
+    <part name="parameters" element="tns:merchantSettlementRequest" />
+  </message>
+  <message name="merchantSettlementRequestResponse">
+    <part name="parameters" element="tns:merchantSettlementRequestResponse" />
+  </message>
+  <message name="WsDuplicateTransactionException">
+    <part name="fault" element="tns:WsDuplicateTransactionException" />
+  </message>
+  <message name="generatePurchaseToken2">
+    <part name="parameters" element="tns:generatePurchaseToken2" />
+  </message>
+  <message name="generatePurchaseToken2Response">
+    <part name="parameters" element="tns:generatePurchaseToken2Response" />
+  </message>
+  <message name="generatePurchaseToken">
+    <part name="parameters" element="tns:generatePurchaseToken" />
+  </message>
+  <message name="generatePurchaseTokenResponse">
+    <part name="parameters" element="tns:generatePurchaseTokenResponse" />
+  </message>
+  <message name="generateSignedPurchaseToken2">
+    <part name="parameters" element="tns:generateSignedPurchaseToken2" />
+  </message>
+  <message name="generateSignedPurchaseToken2Response">
+    <part name="parameters" element="tns:generateSignedPurchaseToken2Response" />
+  </message>
+  <message name="generateSignedPurchaseToken">
+    <part name="parameters" element="tns:generateSignedPurchaseToken" />
+  </message>
+  <message name="generateSignedPurchaseTokenResponse">
+    <part name="parameters" element="tns:generateSignedPurchaseTokenResponse" />
+  </message>
+  <message name="getPurchaseParamsToSign">
+    <part name="parameters" element="tns:getPurchaseParamsToSign" />
+  </message>
+  <message name="getPurchaseParamsToSignResponse">
+    <part name="parameters" element="tns:getPurchaseParamsToSignResponse" />
+  </message>
+  <message name="verifyTransaction">
+    <part name="parameters" element="tns:verifyTransaction" />
+  </message>
+  <message name="verifyTransactionResponse">
+    <part name="parameters" element="tns:verifyTransactionResponse" />
+  </message>
+  <message name="secureVerifyTransaction">
+    <part name="parameters" element="tns:secureVerifyTransaction" />
+  </message>
+  <message name="secureVerifyTransactionResponse">
+    <part name="parameters" element="tns:secureVerifyTransactionResponse" />
+  </message>
+  <message name="reverseTransaction">
+    <part name="parameters" element="tns:reverseTransaction" />
+  </message>
+  <message name="reverseTransactionResponse">
+    <part name="parameters" element="tns:reverseTransactionResponse" />
+  </message>
+  <message name="WebServiceException">
+    <part name="fault" element="tns:WebServiceException" />
+  </message>
+  <message name="WsAmountConstraintViolationException">
+    <part name="fault" element="tns:WsAmountConstraintViolationException" />
+  </message>
+  <message name="WsAuthenticationException">
+    <part name="fault" element="tns:WsAuthenticationException" />
+  </message>
+  <message name="WsPaymentReverseException">
+    <part name="fault" element="tns:WsPaymentReverseException" />
+  </message>
+  <message name="WsSystemMalFunctionException">
+    <part name="fault" element="tns:WsSystemMalFunctionException" />
+  </message>
+  <message name="WsInsufficientFundsException">
+    <part name="fault" element="tns:WsInsufficientFundsException" />
+  </message>
+  <portType name="PaymentWebService">
+    <operation name="login">
+      <input wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/loginRequest" message="tns:login" />
+      <output wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/loginResponse" message="tns:loginResponse" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/login/Fault/WsClientAddressException" name="WsClientAddressException" message="tns:WsClientAddressException" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/login/Fault/WsInvalidCredentialException" name="WsInvalidCredentialException" message="tns:WsInvalidCredentialException" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/login/Fault/WsBlockUserException" name="WsBlockUserException" message="tns:WsBlockUserException" />
+    </operation>
+    <operation name="logout">
+      <input wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/logoutRequest" message="tns:logout" />
+      <output wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/logoutResponse" message="tns:logoutResponse" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/logout/Fault/WsClientAddressException" name="WsClientAddressException" message="tns:WsClientAddressException" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/logout/Fault/WsInvalidSessionException" name="WsInvalidSessionException" message="tns:WsInvalidSessionException" />
+    </operation>
+    <operation name="tokenPurchaseVerifyTransaction">
+      <input wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/tokenPurchaseVerifyTransactionRequest" message="tns:tokenPurchaseVerifyTransaction" />
+      <output wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/tokenPurchaseVerifyTransactionResponse" message="tns:tokenPurchaseVerifyTransactionResponse" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/tokenPurchaseVerifyTransaction/Fault/WsInvalidSessionException" name="WsInvalidSessionException" message="tns:WsInvalidSessionException" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/tokenPurchaseVerifyTransaction/Fault/WsClientAddressException" name="WsClientAddressException" message="tns:WsClientAddressException" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/tokenPurchaseVerifyTransaction/Fault/WsInvalidTokenException" name="WsInvalidTokenException" message="tns:WsInvalidTokenException" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/tokenPurchaseVerifyTransaction/Fault/WsInvalidAmountException" name="WsInvalidAmountException" message="tns:WsInvalidAmountException" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/tokenPurchaseVerifyTransaction/Fault/WsPaymentVerificationException" name="WsPaymentVerificationException" message="tns:WsPaymentVerificationException" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/tokenPurchaseVerifyTransaction/Fault/WsTransactionNotFoundException" name="WsTransactionNotFoundException" message="tns:WsTransactionNotFoundException" />
+    </operation>
+    <operation name="reportTransaction">
+      <input wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/reportTransactionRequest" message="tns:reportTransaction" />
+      <output wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/reportTransactionResponse" message="tns:reportTransactionResponse" />
+    </operation>
+    <operation name="detailReportTransaction">
+      <input wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/detailReportTransactionRequest" message="tns:detailReportTransaction" />
+      <output wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/detailReportTransactionResponse" message="tns:detailReportTransactionResponse" />
+    </operation>
+    <operation name="merchantSettlementRequest">
+      <input wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/merchantSettlementRequestRequest" message="tns:merchantSettlementRequest" />
+      <output wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/merchantSettlementRequestResponse" message="tns:merchantSettlementRequestResponse" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/merchantSettlementRequest/Fault/WsInvalidSessionException" name="WsInvalidSessionException" message="tns:WsInvalidSessionException" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/merchantSettlementRequest/Fault/WsDuplicateTransactionException" name="WsDuplicateTransactionException" message="tns:WsDuplicateTransactionException" />
+    </operation>
+    <operation name="generatePurchaseToken2">
+      <input wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/generatePurchaseToken2Request" message="tns:generatePurchaseToken2" />
+      <output wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/generatePurchaseToken2Response" message="tns:generatePurchaseToken2Response" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/generatePurchaseToken2/Fault/WsTransactionNotFoundException" name="WsTransactionNotFoundException" message="tns:WsTransactionNotFoundException" />
+    </operation>
+    <operation name="generatePurchaseToken">
+      <input wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/generatePurchaseTokenRequest" message="tns:generatePurchaseToken" />
+      <output wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/generatePurchaseTokenResponse" message="tns:generatePurchaseTokenResponse" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/generatePurchaseToken/Fault/WsTransactionNotFoundException" name="WsTransactionNotFoundException" message="tns:WsTransactionNotFoundException" />
+    </operation>
+    <operation name="generateSignedPurchaseToken2">
+      <input wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/generateSignedPurchaseToken2Request" message="tns:generateSignedPurchaseToken2" />
+      <output wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/generateSignedPurchaseToken2Response" message="tns:generateSignedPurchaseToken2Response" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/generateSignedPurchaseToken2/Fault/WsTransactionNotFoundException" name="WsTransactionNotFoundException" message="tns:WsTransactionNotFoundException" />
+    </operation>
+    <operation name="generateSignedPurchaseToken">
+      <input wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/generateSignedPurchaseTokenRequest" message="tns:generateSignedPurchaseToken" />
+      <output wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/generateSignedPurchaseTokenResponse" message="tns:generateSignedPurchaseTokenResponse" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/generateSignedPurchaseToken/Fault/WsTransactionNotFoundException" name="WsTransactionNotFoundException" message="tns:WsTransactionNotFoundException" />
+    </operation>
+    <operation name="getPurchaseParamsToSign">
+      <input wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/getPurchaseParamsToSignRequest" message="tns:getPurchaseParamsToSign" />
+      <output wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/getPurchaseParamsToSignResponse" message="tns:getPurchaseParamsToSignResponse" />
+    </operation>
+    <operation name="verifyTransaction">
+      <input wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/verifyTransactionRequest" message="tns:verifyTransaction" />
+      <output wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/verifyTransactionResponse" message="tns:verifyTransactionResponse" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/verifyTransaction/Fault/WsInvalidSessionException" name="WsInvalidSessionException" message="tns:WsInvalidSessionException" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/verifyTransaction/Fault/WsClientAddressException" name="WsClientAddressException" message="tns:WsClientAddressException" />
+    </operation>
+    <operation name="secureVerifyTransaction">
+      <input wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/secureVerifyTransactionRequest" message="tns:secureVerifyTransaction" />
+      <output wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/secureVerifyTransactionResponse" message="tns:secureVerifyTransactionResponse" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/secureVerifyTransaction/Fault/WsInvalidSessionException" name="WsInvalidSessionException" message="tns:WsInvalidSessionException" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/secureVerifyTransaction/Fault/WsClientAddressException" name="WsClientAddressException" message="tns:WsClientAddressException" />
+    </operation>
+    <operation name="reverseTransaction">
+      <input wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/reverseTransactionRequest" message="tns:reverseTransaction" />
+      <output wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/reverseTransactionResponse" message="tns:reverseTransactionResponse" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/reverseTransaction/Fault/WebServiceException" name="WebServiceException" message="tns:WebServiceException" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/reverseTransaction/Fault/WsAmountConstraintViolationException" name="WsAmountConstraintViolationException" message="tns:WsAmountConstraintViolationException" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/reverseTransaction/Fault/WsAuthenticationException" name="WsAuthenticationException" message="tns:WsAuthenticationException" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/reverseTransaction/Fault/WsClientAddressException" name="WsClientAddressException" message="tns:WsClientAddressException" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/reverseTransaction/Fault/WsPaymentReverseException" name="WsPaymentReverseException" message="tns:WsPaymentReverseException" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/reverseTransaction/Fault/WsSystemMalFunctionException" name="WsSystemMalFunctionException" message="tns:WsSystemMalFunctionException" />
+      <fault wsam:Action="http://paymentService.merchant.webservice.epayment.modern.tosan.com/PaymentWebService/reverseTransaction/Fault/WsInsufficientFundsException" name="WsInsufficientFundsException" message="tns:WsInsufficientFundsException" />
+    </operation>
+  </portType>
+  <binding name="PaymentWebServicePortBinding" type="tns:PaymentWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="login">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsClientAddressException">
+        <soap:fault use="literal" name="WsClientAddressException" namespace="" />
+      </fault>
+      <fault name="WsInvalidCredentialException">
+        <soap:fault use="literal" name="WsInvalidCredentialException" namespace="" />
+      </fault>
+      <fault name="WsBlockUserException">
+        <soap:fault use="literal" name="WsBlockUserException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="logout">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsClientAddressException">
+        <soap:fault use="literal" name="WsClientAddressException" namespace="" />
+      </fault>
+      <fault name="WsInvalidSessionException">
+        <soap:fault use="literal" name="WsInvalidSessionException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="tokenPurchaseVerifyTransaction">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsInvalidSessionException">
+        <soap:fault use="literal" name="WsInvalidSessionException" namespace="" />
+      </fault>
+      <fault name="WsClientAddressException">
+        <soap:fault use="literal" name="WsClientAddressException" namespace="" />
+      </fault>
+      <fault name="WsInvalidTokenException">
+        <soap:fault use="literal" name="WsInvalidTokenException" namespace="" />
+      </fault>
+      <fault name="WsInvalidAmountException">
+        <soap:fault use="literal" name="WsInvalidAmountException" namespace="" />
+      </fault>
+      <fault name="WsPaymentVerificationException">
+        <soap:fault use="literal" name="WsPaymentVerificationException" namespace="" />
+      </fault>
+      <fault name="WsTransactionNotFoundException">
+        <soap:fault use="literal" name="WsTransactionNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="reportTransaction">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="detailReportTransaction">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="merchantSettlementRequest">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsInvalidSessionException">
+        <soap:fault use="literal" name="WsInvalidSessionException" namespace="" />
+      </fault>
+      <fault name="WsDuplicateTransactionException">
+        <soap:fault use="literal" name="WsDuplicateTransactionException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="generatePurchaseToken2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsTransactionNotFoundException">
+        <soap:fault use="literal" name="WsTransactionNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="generatePurchaseToken">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsTransactionNotFoundException">
+        <soap:fault use="literal" name="WsTransactionNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="generateSignedPurchaseToken2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsTransactionNotFoundException">
+        <soap:fault use="literal" name="WsTransactionNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="generateSignedPurchaseToken">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsTransactionNotFoundException">
+        <soap:fault use="literal" name="WsTransactionNotFoundException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getPurchaseParamsToSign">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="verifyTransaction">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsInvalidSessionException">
+        <soap:fault use="literal" name="WsInvalidSessionException" namespace="" />
+      </fault>
+      <fault name="WsClientAddressException">
+        <soap:fault use="literal" name="WsClientAddressException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="secureVerifyTransaction">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsInvalidSessionException">
+        <soap:fault use="literal" name="WsInvalidSessionException" namespace="" />
+      </fault>
+      <fault name="WsClientAddressException">
+        <soap:fault use="literal" name="WsClientAddressException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="reverseTransaction">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WebServiceException">
+        <soap:fault use="literal" name="WebServiceException" namespace="" />
+      </fault>
+      <fault name="WsAmountConstraintViolationException">
+        <soap:fault use="literal" name="WsAmountConstraintViolationException" namespace="" />
+      </fault>
+      <fault name="WsAuthenticationException">
+        <soap:fault use="literal" name="WsAuthenticationException" namespace="" />
+      </fault>
+      <fault name="WsClientAddressException">
+        <soap:fault use="literal" name="WsClientAddressException" namespace="" />
+      </fault>
+      <fault name="WsPaymentReverseException">
+        <soap:fault use="literal" name="WsPaymentReverseException" namespace="" />
+      </fault>
+      <fault name="WsSystemMalFunctionException">
+        <soap:fault use="literal" name="WsSystemMalFunctionException" namespace="" />
+      </fault>
+      <fault name="WsInsufficientFundsException">
+        <soap:fault use="literal" name="WsInsufficientFundsException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="PaymentWebServiceService">
+    <port name="PaymentWebServicePort" binding="tns:PaymentWebServicePortBinding">
+      <soap:address location="https://fanava.shaparak.ir:443/merchantwebservice/jax/merchantAuth" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://paymentService.merchant.webservice.epayment.modern.tosan.com/" targetNamespace="http://paymentService.merchant.webservice.epayment.modern.tosan.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="WebServiceException" type="tns:WebServiceException" />
+  <xs:element name="WsAmountConstraintViolationException" type="tns:WsAmountConstraintViolationException" />
+  <xs:element name="WsAuthenticationException" type="tns:WsAuthenticationException" />
+  <xs:element name="WsBlockUserException" type="tns:WsBlockUserException" />
+  <xs:element name="WsClientAddressException" type="tns:WsClientAddressException" />
+  <xs:element name="WsInsufficientFundsException" type="tns:WsInsufficientFundsException" />
+  <xs:element name="WsInvalidCredentialException" type="tns:WsInvalidCredentialException" />
+  <xs:element name="WsInvalidSessionException" type="tns:WsInvalidSessionException" />
+  <xs:element name="WsPaymentReverseException" type="tns:WsPaymentReverseException" />
+  <xs:element name="WsSystemMalFunctionException" type="tns:WsSystemMalFunctionException" />
+  <xs:element name="WsValidationException" type="tns:WsValidationException" />
+  <xs:element name="detailReportTransaction" type="tns:detailReportTransaction" />
+  <xs:element name="detailReportTransactionResponse" type="tns:detailReportTransactionResponse" />
+  <xs:element name="login" type="tns:login" />
+  <xs:element name="loginResponse" type="tns:loginResponse" />
+  <xs:element name="logout" type="tns:logout" />
+  <xs:element name="logoutResponse" type="tns:logoutResponse" />
+  <xs:element name="reportTransaction" type="tns:reportTransaction" />
+  <xs:element name="reportTransactionResponse" type="tns:reportTransactionResponse" />
+  <xs:element name="reverseTransaction" type="tns:reverseTransaction" />
+  <xs:element name="reverseTransactionResponse" type="tns:reverseTransactionResponse" />
+  <xs:element name="secureVerifyTransaction" type="tns:secureVerifyTransaction" />
+  <xs:element name="secureVerifyTransactionResponse" type="tns:secureVerifyTransactionResponse" />
+  <xs:element name="verifyTransaction" type="tns:verifyTransaction" />
+  <xs:element name="verifyTransactionResponse" type="tns:verifyTransactionResponse" />
+  <xs:complexType name="reportTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="context" type="tns:wsContext" />
+      <xs:element minOccurs="0" name="reportRequest" type="tns:reportRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="wsContext">
+    <xs:sequence>
+      <xs:element name="data">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="entry">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="key" type="xs:string" />
+                  <xs:element minOccurs="0" name="value" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reportRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amountMax" type="xs:decimal" />
+      <xs:element minOccurs="0" name="amountMin" type="xs:decimal" />
+      <xs:element minOccurs="0" name="billId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="billTypes" nillable="true" type="tns:billType" />
+      <xs:element minOccurs="0" name="customerRefNum" type="xs:string" />
+      <xs:element name="length" type="xs:short" />
+      <xs:element name="offset" type="xs:long" />
+      <xs:element name="onlyReversed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="orderField" type="tns:orderField" />
+      <xs:element minOccurs="0" name="orderType" type="tns:orderType" />
+      <xs:element minOccurs="0" name="paymentId" type="xs:string" />
+      <xs:element minOccurs="0" name="refNum" type="xs:string" />
+      <xs:element minOccurs="0" name="resNum" type="xs:string" />
+      <xs:element minOccurs="0" name="timeMax" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="timeMin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="transactionState" type="tns:transactionState" />
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reportTransactionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:reportResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reportResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="reportResponseResults" nillable="true" type="tns:reportResponseResult" />
+      <xs:element minOccurs="0" name="totalRecord" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reportResponseResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="billId" type="xs:string" />
+      <xs:element minOccurs="0" name="billType" type="tns:billType" />
+      <xs:element minOccurs="0" name="customerRefNum" type="xs:string" />
+      <xs:element name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="paymentId" type="xs:string" />
+      <xs:element minOccurs="0" name="refNum" type="xs:string" />
+      <xs:element minOccurs="0" name="resNum" type="xs:string" />
+      <xs:element minOccurs="0" name="time" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="transactionState" type="tns:transactionState" />
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WsValidationException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verifyTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="context" type="tns:wsContext" />
+      <xs:element minOccurs="0" name="verifyRequest" type="tns:verifyRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verifyRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="refNumList" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verifyTransactionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:verifyResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verifyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="verifyResponseResults" nillable="true" type="tns:verifyResponseResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verifyResponseResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="refNum" type="xs:string" />
+      <xs:element minOccurs="0" name="verificationError" type="tns:verificationError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WsInvalidSessionException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="login">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="loginRequest" type="tns:loginRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="loginRequest">
+    <xs:sequence>
+      <xs:element name="password" type="xs:string" />
+      <xs:element name="username" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="loginResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WsInvalidCredentialException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WsBlockUserException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="secureVerifyTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="context" type="tns:wsContext" />
+      <xs:element minOccurs="0" name="secureVerifyRequest" type="tns:secureVerifyRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="secureVerifyRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="secureVerifyInfoList" nillable="true" type="tns:secureVerifyInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="secureVerifyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="refNum" type="xs:string" />
+      <xs:element minOccurs="0" name="resNum" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="secureVerifyTransactionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:secureVerifyResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="secureVerifyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="secureVerifyResponseResults" nillable="true" type="tns:secureVerifyResponseResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="secureVerifyResponseResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="refNum" type="xs:string" />
+      <xs:element minOccurs="0" name="resNum" type="xs:string" />
+      <xs:element minOccurs="0" name="verificationError" type="tns:verificationError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="logout">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="context" type="tns:wsContext" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="logoutResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="detailReportTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="context" type="tns:wsContext" />
+      <xs:element minOccurs="0" name="detailReportRequest" type="tns:detailReportRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="detailReportRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amountMax" type="xs:decimal" />
+      <xs:element minOccurs="0" name="amountMin" type="xs:decimal" />
+      <xs:element name="length" type="xs:short" />
+      <xs:element minOccurs="0" name="mainTransactionId" type="xs:long" />
+      <xs:element name="offset" type="xs:long" />
+      <xs:element minOccurs="0" name="orderField" type="tns:orderField" />
+      <xs:element minOccurs="0" name="orderType" type="tns:orderType" />
+      <xs:element minOccurs="0" name="refNum" type="xs:string" />
+      <xs:element minOccurs="0" name="resNum" type="xs:string" />
+      <xs:element minOccurs="0" name="timeMax" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="timeMin" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="detailReportTransactionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:detailReportResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="detailReportResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="detailReportResponseResults" nillable="true" type="tns:detailReportResponseResult" />
+      <xs:element minOccurs="0" name="totalRecord" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="detailReportResponseResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+      <xs:element name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="mainTransactionId" type="xs:long" />
+      <xs:element minOccurs="0" name="refNum" type="xs:string" />
+      <xs:element minOccurs="0" name="resNum" type="xs:string" />
+      <xs:element minOccurs="0" name="reverseType" type="tns:reverseType" />
+      <xs:element minOccurs="0" name="time" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reverseTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="context" type="tns:wsContext" />
+      <xs:element minOccurs="0" name="reverseRequest" type="tns:reverseRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reverseRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mainTransactionRefNum" type="xs:string" />
+      <xs:element minOccurs="0" name="reverseTransactionResNum" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reverseTransactionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:reverseResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reverseResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="refNum" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WebServiceException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WsAmountConstraintViolationException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WsAuthenticationException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WsClientAddressException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WsPaymentReverseException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WsSystemMalFunctionException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WsInsufficientFundsException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="billType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNKNOWN" />
+      <xs:enumeration value="WATER" />
+      <xs:enumeration value="ELECTRICITY" />
+      <xs:enumeration value="GAS" />
+      <xs:enumeration value="IMMOBILE_PHONE" />
+      <xs:enumeration value="MOBILE_PHONE" />
+      <xs:enumeration value="MUNICIPALITY_DUE" />
+      <xs:enumeration value="MUNICIPALITY_7" />
+      <xs:enumeration value="TAX" />
+      <xs:enumeration value="CUSTOM" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="orderField">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TRANSACTION_TIME" />
+      <xs:enumeration value="AMOUNT" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="orderType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ASC" />
+      <xs:enumeration value="DESC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="transactionState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESS" />
+      <xs:enumeration value="NOT_VERIFIED" />
+      <xs:enumeration value="FAILED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="transactionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PURCHASE" />
+      <xs:enumeration value="BILL_PAYMENT" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="verificationError">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CLIENT_ADDRESS_ERROR" />
+      <xs:enumeration value="TRANSACTION_NOT_FOUND_ERROR" />
+      <xs:enumeration value="TRANSACTION_IS_NOT_VERIFIABLE" />
+      <xs:enumeration value="VALIDATION_EXCEPTION" />
+      <xs:enumeration value="INVALID_SESSION_EXCEPTION" />
+      <xs:enumeration value="SYSTEM_ERROR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="reverseType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CUSTOM_REVERSED" />
+      <xs:enumeration value="SYSTEM_REVERSED" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

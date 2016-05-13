@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "";
+}
+@model ConfigurationModel
+@using Nop.Plugin.Payments.Fanava.Models;
+@using Nop.Web.Framework;
+@Html.Action("StoreScopeConfiguration", "Setting", new { area = "Admin" })
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <table class="adminContent">
+        <tr>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <hr />
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.OverrideStoreCheckboxFor(model => model.MerchantId_OverrideForStore, model => model.MerchantId, Model.ActiveStoreScopeConfiguration)
+                @Html.NopLabelFor(model => model.MerchantId):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.MerchantId)
+                @Html.ValidationMessageFor(model => model.MerchantId)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.OverrideStoreCheckboxFor(model => model.Passcode_OverrideForStore, model => model.Passcode, Model.ActiveStoreScopeConfiguration)
+                @Html.NopLabelFor(model => model.Passcode):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.Passcode)
+                @Html.ValidationMessageFor(model => model.Passcode)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" name="save" class="k-button" value="@T("Admin.Common.Save")" />
+            </td>
+        </tr>
+    </table>
+
+}

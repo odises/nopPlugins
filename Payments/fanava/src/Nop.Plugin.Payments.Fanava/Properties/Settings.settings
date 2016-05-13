@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Nop.Plugin.Payments.Fanava.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Nop_Plugin_Payments_Saman_Sep_InitPayment_PaymentIFBinding" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://sep.shaparak.ir/payments/initpayment.asmx</Value>
+    </Setting>
+    <Setting Name="Nop_Plugin_Payments_Saman_Sep_ReferencePayment_PaymentIFBinding" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://sep.shaparak.ir/payments/referencepayment.asmx</Value>
+    </Setting>
+    <Setting Name="Nop_Plugin_Payments_Fanava_ir_shaparak_fanava_PaymentWebServiceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://fanava.shaparak.ir:443/merchantwebservice/jax/merchantAuth</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

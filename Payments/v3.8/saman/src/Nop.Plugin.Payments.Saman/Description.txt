@@ -1,0 +1,8 @@
+﻿Group: Payment methods
+FriendlyName: Saman
+SystemName: Payments.Saman
+Version: 1.00
+SupportedVersions: 3.80
+Author: Reza Ahmadi (r.odises@gmail.com)
+DisplayOrder: 1
+FileName: Nop.Plugin.Payments.Saman.dll

@@ -1,8 +1,0 @@
-﻿Group: Payment methods
-FriendlyName: Mellat
-SystemName: Payments.Mellat
-Version: 1.00
-SupportedVersions: 3.70
-Author: Reza Ahmadi (r.odises@gmail.com)
-DisplayOrder: 1
-FileName: Nop.Plugin.Payments.Mellat.dll
